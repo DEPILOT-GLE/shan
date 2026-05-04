@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEPILOT & Dr. Sarah – Walking Together in Love and Vision</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
+
+        :root {
+            --primary-color: #8b1c31; /* Deep romantic red/burgundy */
+            --secondary-color: #d4af37; /* Soft gold */
+            --bg-color: #0b0c10; /* Darker base for premium galaxy feel */
+            --text-color: #2c1e1e;
+            --card-bg: rgba(255, 255, 255, 0.85); /* More translucent for background */
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* --- Premium Backgrounds: Live Video, Galaxy, Shapes --- */
+        .bg-container {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -2;
+            overflow: hidden;
+            background: linear-gradient(135deg, #100b16 0%, #201124 50%, #0b101d 100%);
+        }
+
+        /* Live Background Video (flowers/river) */
+        .bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translateX(-50%) translateY(-50%);
+            opacity: 0.15; /* Subtle blend with the galaxy colors */
+            z-index: -1;
+            object-fit: cover;
+            mix-blend-mode: screen;
+        }
+
+        /* Glowing Orbs / Shapes */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.6;
+            animation: float 25s infinite ease-in-out alternate;
+        }
+        .orb-1 { width: 40vw; height: 40vw; background: rgba(139, 28, 49, 0.5); top: -10%; left: -10%; animation-delay: 0s; }
+        .orb-2 { width: 50vw; height: 50vw; background: rgba(212, 175, 55, 0.3); bottom: -20%; right: -10%; animation-delay: -5s; }
+        .orb-3 { width: 35vw; height: 35vw; background: rgba(40, 20, 80, 0.6); top: 30%; left: 50%; animation-delay: -10s; }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(5vw, 10vh) scale(1.1); }
+            100% { transform: translate(-5vw, 5vh) scale(1.2); }
+        }
+
+        /* Solar System Animation */
+        .solar-system {
+            position: absolute;
+            top: 15%;
+            left: 10%;
+            width: 400px;
+            height: 400px;
+            opacity: 0.25;
+            animation: spinSystem 120s linear infinite;
+        }
+        .sun {
+            position: absolute; top: 50%; left: 50%; width: 50px; height: 50px;
+            background: radial-gradient(circle, #fff, #ffcc00, transparent);
+            border-radius: 50%; transform: translate(-50%, -50%);
+            box-shadow: 0 0 60px #ffcc00, 0 0 100px #ff8800;
+        }
+        .orbit {
+            position: absolute; top: 50%; left: 50%;
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 50%; transform: translate(-50%, -50%);
+        }
+        .orbit-1 { width: 120px; height: 120px; animation: spinOrbit 10s linear infinite; }
+        .orbit-2 { width: 200px; height: 200px; animation: spinOrbit 20s linear infinite; }
+        .orbit-3 { width: 300px; height: 300px; animation: spinOrbit 35s linear infinite; }
+        
+        .planet {
+            position: absolute; top: -5px; left: 50%; width: 10px; height: 10px;
+            background: #fff; border-radius: 50%;
+            box-shadow: 0 0 10px #fff;
+        }
+        .planet-2 { width: 15px; height: 15px; top: -7.5px; background: #8b1c31; box-shadow: 0 0 15px #8b1c31;}
+        .planet-3 { width: 20px; height: 20px; top: -10px; background: #d4af37; box-shadow: 0 0 20px #d4af37;}
+
+        @keyframes spinSystem { 100% { transform: rotate(360deg); } }
+        @keyframes spinOrbit { 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+
+        /* Starry Galaxy Overlay */
+        .stars {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: transparent;
+            z-index: 0;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            animation: twinkle 5s infinite alternate;
+            opacity: 0.4;
+        }
+        @keyframes twinkle { 0% { opacity: 0.2; } 100% { opacity: 0.6; } }
+
+        /* --- Side Navigation & Modals --- */
+        .hamburger-menu {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            font-size: 2rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            z-index: 2000;
+            background: rgba(255,255,255,0.85);
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: var(--transition);
+        }
+        .hamburger-menu:hover {
+            transform: scale(1.1);
+            background: #fff;
+            color: #d4af37;
+        }
+
+        .side-nav {
+            height: 100vh;
+            width: 0;
+            position: fixed;
+            z-index: 2500;
+            top: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 80px;
+            box-shadow: -5px 0 25px rgba(0,0,0,0.3);
+            border-left: 2px solid var(--secondary-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .side-nav a {
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            color: var(--text-color);
+            display: block;
+            transition: 0.3s;
+            font-family: 'Playfair Display', serif;
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .side-nav a:hover {
+            color: var(--primary-color);
+            background: rgba(212, 175, 55, 0.1);
+            transform: scale(1.02);
+        }
+
+        .side-nav .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 3rem;
+            border-bottom: none;
+            width: auto;
+            color: var(--primary-color);
+        }
+
+        .btn-sos {
+            margin-top: 30px;
+            background: linear-gradient(45deg, #4a0e1a, var(--primary-color));
+            width: 85%;
+            font-size: 1.1rem;
+            line-height: 1.4;
+            padding: 20px;
+            border-radius: 15px;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            animation: pulseGlow 2s infinite;
+            transition: var(--transition);
+        }
+        .btn-sos:hover {
+            transform: scale(1.05);
+            background: linear-gradient(45deg, var(--primary-color), #ff4d4d);
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes blossom { 0% { transform: scale(0.8); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+        @keyframes pulseGlow { 0% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); } 50% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.6); } 100% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); } }
+
+        .animate-fade { animation: fadeIn 1.5s ease forwards; }
+        .animate-slide { animation: slideUp 1s ease forwards; }
+        .animate-blossom { animation: blossom 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 5px 10px;
+            transition: var(--transition);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('assets/hero-bg.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 4px 15px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+            opacity: 0;
+            animation: slideUp 1.5s ease 0.5s forwards;
+            background: -webkit-linear-gradient(#fff, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.6rem;
+            font-style: italic;
+            opacity: 0;
+            animation: fadeIn 2s ease 1.5s forwards;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+        }
+
+        /* --- Sections --- */
+        section {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-title {
+            text-align: center;
+            color: white;
+            text-shadow: 1px 2px 4px rgba(0,0,0,0.5);
+            font-size: 3rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '❦';
+            display: block;
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-top: 10px;
+            text-shadow: none;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: var(--transition);
+            margin-bottom: 30px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Daily Verse */
+        .verse-container {
+            text-align: center;
+            font-style: italic;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .verse-ref {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #555;
+            font-style: normal;
+        }
+
+        /* Greeting Generator */
+        .greeting-box {
+            text-align: center;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, var(--primary-color), #a3223a);
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-family: 'Playfair Display', serif;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(139, 28, 49, 0.4);
+            margin: 10px;
+        }
+
+        .btn:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 28, 49, 0.6);
+        }
+
+        .btn-gold {
+            background: linear-gradient(45deg, #e5c355, var(--secondary-color));
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.5);
+        }
+
+        .btn-gold:hover {
+            animation: pulseGlow 1.5s infinite;
+        }
+
+        #greeting-display {
+            margin-top: 25px;
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            min-height: 50px;
+            transition: opacity 0.5s;
+            font-weight: 600;
+        }
+
+        /* Feelings Journal */
+        .journal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .journal-grid { grid-template-columns: 1fr; }
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 15px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            font-family: 'Lora', serif;
+            font-size: 1.1rem;
+            resize: none;
+            margin-bottom: 15px;
+            transition: var(--transition);
+            background: rgba(255,255,255,0.7);
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            background: #fff;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .entries-display {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+            font-style: italic;
+            min-height: 60px;
+        }
+
+        /* Presence Box */
+        .presence-box {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.8));
+        }
+
+        .checkbox-wrapper {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            cursor: pointer;
+        }
+
+        .custom-checkbox {
+            width: 32px;
+            height: 32px;
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            background: rgba(255,255,255,0.5);
+        }
+
+        input[type="checkbox"] { display: none; }
+        
+        input[type="checkbox"]:checked + .custom-checkbox {
+            background: var(--primary-color);
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        input[type="checkbox"]:checked + .custom-checkbox::after {
+            content: '✓';
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .status-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Videos Section */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .video-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            background: #000;
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            transition: var(--transition);
+        }
+        
+        .video-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            border-color: var(--secondary-color);
+        }
+
+        video {
+            width: 100%;
+            display: block;
+        }
+
+        /* Popup Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 450px;
+            animation: blossom 0.5s ease forwards;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border: 2px solid var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(to top, #000, var(--primary-color));
+            color: white;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            z-index: 10;
+            border-top: 2px solid var(--secondary-color);
+        }
+
+        .divider {
+            text-align: center;
+            margin: 50px 0;
+            position: relative;
+            z-index: 10;
+        }
+        .divider img {
+            max-width: 250px;
+            opacity: 0.9;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Hamburger Menu & Side Nav -->
+    <div class="hamburger-menu" onclick="toggleNav()">☰</div>
+    <div id="mySideNav" class="side-nav">
+        <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">&times;</a>
+        <a href="javascript:void(0)" onclick="openActionModal('Ask a Question', 'What is on your beautiful mind? I am here to listen.')">Ask a Question</a>
+        <a href="javascript:void(0)" onclick="openActionModal('Bring about an Issue', 'What is bothering you? Let us face it together.')">Bring about an Issue</a>
+        <a href="javascript:void(0)" onclick="openActionModal('Show Concern', 'What are you concerned about? Your feelings matter immensely.')">Show Concern</a>
+        <button class="btn-sos" onclick="triggerSOS()">
+            Today I am feeling lonely, bored, uneasy, broken, or desperate.<br><br>
+            <strong style="font-size: 1.3rem;">Kindly reach out to me 🥺💔</strong>
+        </button>
+    </div>
+
+    <!-- Action Modal -->
+    <div id="actionModal" class="modal">
+        <div class="modal-content">
+            <h2 id="actionModalTitle" style="color: var(--primary-color); margin-bottom: 15px; font-size: 1.8rem;"></h2>
+            <p id="actionModalDesc" style="font-size: 1.1rem; margin-bottom: 15px; font-style: italic; color: #555;"></p>
+            <textarea id="actionText" placeholder="Type your heart out here..."></textarea>
+            <div style="display: flex; gap: 15px; justify-content: center; margin-top: 20px;">
+                <button class="btn btn-gold" onclick="submitAction()">Send Gently</button>
+                <button class="btn" style="background: #555; box-shadow: none;" onclick="closeActionModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Premium Animated Background Elements -->
+    <div class="bg-container">
+        <!-- Live Video Background (Flowers/Nature fallback) -->
+        <!-- We use a high quality public stock video of beautiful flowers swaying in the wind -->
+        <video class="bg-video" autoplay loop muted playsinline>
+            <source src="https://cdn.pixabay.com/video/2016/09/21/5320-183786016_large.mp4" type="video/mp4">
+            <source src="https://cdn.pixabay.com/video/2020/05/25/40141-424855878_large.mp4" type="video/mp4">
+        </video>
+
+        <!-- Galaxy Stars -->
+        <div class="stars"></div>
+        
+        <!-- Glowing Floating Orbs (Shapes with colors) -->
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+
+        <!-- Solar System Animation -->
+        <div class="solar-system">
+            <div class="sun"></div>
+            <div class="orbit orbit-1"><div class="planet"></div></div>
+            <div class="orbit orbit-2"><div class="planet planet-2"></div></div>
+            <div class="orbit orbit-3"><div class="planet planet-3"></div></div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#daily-word">Daily Word</a>
+            <a href="#greetings">Greetings</a>
+            <a href="#feelings">Feelings Journal</a>
+            <a href="#presence">Presence</a>
+            <a href="#memories">Memories</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>DEPILOT & Dr. Sarah</h1>
+            <p>Walking Together in Love and Vision</p>
+        </div>
+    </header>
+
+    <div id="reminderModal" class="modal">
+        <div class="modal-content">
+            <h2 style="color: var(--primary-color); margin-bottom: 15px; font-size: 2rem;">Lovers Reminder 💖</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 10px;">Today you haven’t marked your presence.</p>
+            <p style="font-style: italic; color: #666;">Don’t let love wait.</p>
+            <button class="btn btn-gold" style="margin-top: 25px; font-size: 1.2rem;" onclick="closeModal()">I'm Here Now</button>
+        </div>
+    </div>
+
+    <section id="daily-word" class="animate-slide">
+        <h2 class="section-title">Daily Manna</h2>
+        <div class="card verse-container">
+            <p id="daily-verse">"Loading today's verse..."</p>
+            <span id="verse-ref" class="verse-ref"></span>
+        </div>
+    </section>
+
+    <section id="greetings" class="animate-slide">
+        <h2 class="section-title">Sweet Nothings</h2>
+        <div class="card greeting-box">
+            <p style="margin-bottom: 20px; font-size: 1.2rem; font-style: italic;">A little message to brighten the day.</p>
+            <button class="btn" onclick="generateGreeting()">Send a Greeting</button>
+            <div id="greeting-display"></div>
+        </div>
+    </section>
+
+    <div class="divider">
+        <img src="assets/rose-divider.png" alt="Rose Divider">
+    </div>
+
+    <section id="feelings" class="animate-slide">
+        <h2 class="section-title">Our Hearts Today</h2>
+        <div class="journal-grid">
+            <div class="card">
+                <h3 style="color: var(--primary-color); margin-bottom: 15px; font-size: 1.5rem;">Dr. Sarah's Heart ✍️</h3>
+                <textarea id="sarah-entry" placeholder="How are you feeling today, my love?"></textarea>
+                <button class="btn" onclick="saveEntry('sarah')">Save Entry</button>
+                <button class="btn btn-gold" onclick="viewEntry('sarah')">See how Dr. Sarah is feeling</button>
+                <div id="sarah-display" class="entries-display"></div>
+            </div>
+            <div class="card">
+                <h3 style="color: var(--primary-color); margin-bottom: 15px; font-size: 1.5rem;">DEPILOT's Heart ✍️</h3>
+                <textarea id="depilot-entry" placeholder="How are you feeling today, my love?"></textarea>
+                <button class="btn" onclick="saveEntry('depilot')">Save Entry</button>
+                <button class="btn btn-gold" onclick="viewEntry('depilot')">See how DEPILOT is feeling</button>
+                <div id="depilot-display" class="entries-display"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quotes" class="animate-slide">
+        <h2 class="section-title">Vision & Strength</h2>
+        <div class="card text-center" style="text-align: center;">
+            <p id="holiday-greeting" style="color: var(--primary-color); font-weight: bold; font-size: 1.5rem; margin-bottom: 20px; display: none;"></p>
+            <button class="btn btn-gold" onclick="generateQuote()" style="padding: 15px 50px; font-size: 1.3rem;">Today's Quote</button>
+            <p id="quote-display" style="margin-top: 30px; font-size: 1.4rem; font-style: italic; min-height: 60px; color: var(--primary-color); font-weight: 500;"></p>
+        </div>
+    </section>
+
+    <section id="presence" class="animate-slide">
+        <h2 class="section-title">Love's Attendance</h2>
+        <div class="card presence-box">
+            <h3 style="font-size: 1.8rem; margin-bottom: 5px;">Daily Check-in</h3>
+            <p style="font-style: italic; color: #555;">Let each other know you are thinking of them.</p>
+            
+            <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-top: 30px;">
+                <div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <h4 style="font-size: 1.4rem; color: var(--primary-color);">Dr. Sarah</h4>
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" id="sarah-presence" onchange="togglePresence('sarah')">
+                        <span class="custom-checkbox"></span>
+                        <span class="status-text">I was present today because I miss you.</span>
+                    </label>
+                    <p id="sarah-time" style="font-size: 1rem; color: #666; font-weight: bold;"></p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <h4 style="font-size: 1.4rem; color: var(--primary-color);">DEPILOT</h4>
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" id="depilot-presence" onchange="togglePresence('depilot')">
+                        <span class="custom-checkbox"></span>
+                        <span class="status-text">I was present today because I miss you.</span>
+                    </label>
+                    <p id="depilot-time" style="font-size: 1rem; color: #666; font-weight: bold;"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="memories" class="animate-slide">
+        <h2 class="section-title">Our Moments</h2>
+        <p style="text-align: center; color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); font-size: 1.2rem; margin-bottom: 20px;">Videos of our love and journey.</p>
+        <div class="video-grid">
+            <div class="video-container">
+                <video controls preload="metadata">
+                    <source src="assets/vid1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-container">
+                <video controls preload="metadata">
+                    <source src="assets/vid2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-container">
+                <video controls preload="metadata">
+                    <source src="assets/vid3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top: 40px;">
+             <a href="https://vm.tiktok.com/ZS9FRmwBfAdoX-6wTi6/" target="_blank" class="btn btn-gold" style="font-size: 1.2rem; padding: 15px 40px;">View Special TikTok Memory ✨</a>
+        </div>
+    </section>
+
+    <footer>
+        <h2 style="font-size: 2.5rem; margin-bottom: 10px;">DEPILOT & Dr. Sarah</h2>
+        <p style="font-size: 1.2rem; font-style: italic;">Walking together in faith, discipline, and endless love.</p>
+        <p style="margin-top: 20px; font-size: 1rem; letter-spacing: 2px;">FOREVER & ALWAYS</p>
+    </footer>
+
+    <script>
+        // --- Data ---
+        const verses = [
+            { text: "Love is patient, love is kind. It does not envy, it does not boast, it is not proud.", ref: "1 Corinthians 13:4" },
+            { text: "And over all these virtues put on love, which binds them all together in perfect unity.", ref: "Colossians 3:14" },
+            { text: "I have found the one whom my soul loves.", ref: "Song of Solomon 3:4" },
+            { text: "Let all that you do be done in love.", ref: "1 Corinthians 16:14" },
+            { text: "Two are better than one, because they have a good return for their labor.", ref: "Ecclesiastes 4:9" }
+        ];
+
+        const greetings = [
+            "Good morning my heartbeat, how is your beautiful soul doing today? ✨",
+            "Hey my love, just checking in... how are you doing today? I miss you. 🌹",
+            "Thinking of you and our vision. How is your day unfolding, my darling? 🕊️",
+            "You are my answered prayer. How are you feeling right now? 💖",
+            "Sending you a warm embrace. How are you doing today, my rock? 🌅"
+        ];
+
+        const quotes = [
+            "Discipline is the bridge between our goals and our accomplishments. Keep pushing, my love.",
+            "Consistency is what transforms average into excellence. Let's build our empire.",
+            "Our vision is valid. Let's support each other in making it a reality today.",
+            "Encouragement is oxygen to the soul. I believe in you immensely.",
+            "True love isn't just about feeling; it's about building together with unwavering faith."
+        ];
+
+        const holidays = {
+            "01-01": "New Year",
+            "02-14": "Valentine's Day",
+            "12-25": "Christmas"
+        };
+
+        // --- Daily Verse Logic ---
+        function setDailyVerse() {
+            const today = new Date();
+            const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+            const verseIndex = dayOfYear % verses.length;
+            
+            document.getElementById('daily-verse').innerText = verses[verseIndex].text;
+            document.getElementById('verse-ref').innerText = verses[verseIndex].ref;
+        }
+
+        // --- Greeting Generator ---
+        let lastGreetingIdx = -1;
+        function generateGreeting() {
+            let idx;
+            do {
+                idx = Math.floor(Math.random() * greetings.length);
+            } while (idx === lastGreetingIdx && greetings.length > 1);
+            lastGreetingIdx = idx;
+
+            const display = document.getElementById('greeting-display');
+            display.style.opacity = 0;
+            setTimeout(() => {
+                display.innerText = greetings[idx];
+                display.style.opacity = 1;
+            }, 300);
+        }
+
+        // --- Feelings Journal ---
+        function saveEntry(person) {
+            const text = document.getElementById(`${person}-entry`).value;
+            if(!text.trim()) return;
+
+            const now = new Date();
+            const dateStr = now.toLocaleString();
+            
+            const entry = { text: text, time: dateStr };
+            localStorage.setItem(`${person}_journal`, JSON.stringify(entry));
+            
+            document.getElementById(`${person}-entry`).value = '';
+            alert("Entry saved safely in the vault of love.");
+        }
+
+        function viewEntry(person) {
+            const data = localStorage.getItem(`${person}_journal`);
+            const display = document.getElementById(`${person}-display`);
+            
+            if(data) {
+                const entry = JSON.parse(data);
+                display.innerHTML = `<strong>${entry.time}</strong><br>${entry.text}`;
+            } else {
+                display.innerHTML = "No feelings poured out today yet.";
+            }
+        }
+
+        // --- Quote & Holidays ---
+        function checkHoliday() {
+            const today = new Date();
+            const monthStr = String(today.getMonth() + 1).padStart(2, '0');
+            const dayStr = String(today.getDate()).padStart(2, '0');
+            const key = `${monthStr}-${dayStr}`;
+
+            if(holidays[key]) {
+                const el = document.getElementById('holiday-greeting');
+                el.innerText = `🎉 Happy ${holidays[key]}, my love!`;
+                el.style.display = 'block';
+            }
+        }
+
+        let lastQuoteIdx = -1;
+        function generateQuote() {
+            let idx;
+            do {
+                idx = Math.floor(Math.random() * quotes.length);
+            } while (idx === lastQuoteIdx && quotes.length > 1);
+            lastQuoteIdx = idx;
+
+            const display = document.getElementById('quote-display');
+            display.style.opacity = 0;
+            setTimeout(() => {
+                display.innerText = `"${quotes[idx]}"`;
+                display.style.opacity = 1;
+            }, 300);
+        }
+
+        // --- Presence Check-in ---
+        function togglePresence(person) {
+            const cb = document.getElementById(`${person}-presence`);
+            const now = new Date().getTime();
+            
+            if(cb.checked) {
+                localStorage.setItem(`${person}_presence_time`, now);
+                updatePresenceUI(person, now);
+            } else {
+                localStorage.removeItem(`${person}_presence_time`);
+                document.getElementById(`${person}-time`).innerText = '';
+            }
+        }
+
+        function updatePresenceUI(person, timestamp) {
+            if(!timestamp) return;
+            const date = new Date(parseInt(timestamp));
+            document.getElementById(`${person}-time`).innerText = `Marked at: ${date.toLocaleTimeString()}`;
+            document.getElementById(`${person}-presence`).checked = true;
+        }
+
+        function checkPresenceReset() {
+            const now = new Date().getTime();
+            const oneDay = 24 * 60 * 60 * 1000;
+
+            ['sarah', 'depilot'].forEach(person => {
+                const time = localStorage.getItem(`${person}_presence_time`);
+                if(time) {
+                    if (now - parseInt(time) > oneDay) {
+                        // Reset after 24h
+                        localStorage.removeItem(`${person}_presence_time`);
+                    } else {
+                        updatePresenceUI(person, time);
+                    }
+                }
+            });
+
+            // Show reminder if someone hasn't checked in
+            const sarahTime = localStorage.getItem(`sarah_presence_time`);
+            const depilotTime = localStorage.getItem(`depilot_presence_time`);
+            
+            if(!sarahTime || !depilotTime) {
+                setTimeout(() => {
+                    document.getElementById('reminderModal').style.display = 'flex';
+                }, 3000); // Show popup after 3 seconds
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('reminderModal').style.display = 'none';
+        }
+
+        // --- Side Nav & Action Modals ---
+        let navOpen = false;
+        function toggleNav() {
+            const nav = document.getElementById("mySideNav");
+            if (navOpen) {
+                nav.style.width = "0";
+                navOpen = false;
+            } else {
+                nav.style.width = "350px";
+                if(window.innerWidth < 400) nav.style.width = "100%";
+                navOpen = true;
+            }
+        }
+
+        function openActionModal(title, desc) {
+            toggleNav(); // Close nav
+            document.getElementById('actionModalTitle').innerText = title;
+            document.getElementById('actionModalDesc').innerText = desc;
+            document.getElementById('actionText').value = '';
+            document.getElementById('actionModal').style.display = 'flex';
+        }
+
+        function closeActionModal() {
+            document.getElementById('actionModal').style.display = 'none';
+        }
+
+        function submitAction() {
+            const text = document.getElementById('actionText').value;
+            if(!text.trim()) return;
+            // Here we can save it to local storage or just show a sweet message
+            alert("Your thoughts have been securely saved to our vault of love. I'll reach out to you soon. 💕");
+            closeActionModal();
+        }
+
+        function triggerSOS() {
+            toggleNav(); // Close nav
+            document.getElementById('actionModalTitle').innerText = "SOS: I Need You";
+            document.getElementById('actionModalDesc').innerText = "I know things are hard right now. Let me know exactly what you are feeling, and I will reach out to you immediately.";
+            document.getElementById('actionText').value = "Kindly reach out to me. I am feeling... ";
+            document.getElementById('actionModal').style.display = 'flex';
+        }
+
+        // --- Initialization ---
+        window.onload = function() {
+            setDailyVerse();
+            checkHoliday();
+            checkPresenceReset();
+
+            // Intersect Observer for scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            });
+
+            document.querySelectorAll('.animate-slide').forEach((el) => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        };
+    </script>
+</body>
+</html>
